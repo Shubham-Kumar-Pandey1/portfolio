@@ -2,7 +2,7 @@ export function getAboutResponse() {
     return `
     </br>
     <div class="profile-container">
-        <img src="../public/profile_pic.jpg" alt="Shubham Kumar Pandey" class="profile-img">
+        <img src="https://shubham-kumar-pandey1.github.io/portfolio/public/profile_pic.jpg" alt="Shubham Kumar Pandey" class="profile-img">
         <span class="profile-text">Shubham Kumar Pandey</span>
     </div>
 
