@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "JetBrains Mono",serif ;
+  padding: 10px;
+}
+
+#terminal {
+  min-height: 70vh;
+  width: 80vw;
+  max-width: 90%;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #2b2828, #242121);
+  box-shadow: 30px -30px 80px #100f0f, -30px 30px 80px #403b3b;
+  border: 1px solid #3a3a3a;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#terminal-header {
+  width: 100%;
+  height: 50px;
+  background: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+  padding-left: 20px;
+  border-bottom: 1px solid #4a4a4a;
+  flex-shrink: 0;
+}
+
+/* Terminal Title */
+#terminal-title {
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+}
+
+/* Terminal Content */
+#terminal-body {
+  padding: 20px;
+  color: white;
+  font-size: 14px;
+  flex-grow: 1;
+  overflow-y: auto;
+  scrollbar-width: none;
+  max-height: 450px;
+}
+
+/* Intro Text */
+#terminal-intro {
+  color: #00ff00;
+  font-size: 14px;
+  margin-bottom: 20px;
+  /* border:2px solid red; */
+}
+
+/* Command Highlight */
+.cmd-highlight {
+  color: cyan;
+  font-weight: bold;
+}
+
+/* Command Input */
+#terminal-input-line {
+  display: flex;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+.cmd-path {
+  color: lightgreen;
+  font-weight: bold;
+  margin-right: 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Makes entered command stand out */
+.prev-command-correct {
+  color: cyan; 
+  font-weight: bold;
+}
+.prev-command-incorrect{
+    color: red; 
+    font-weight: bold;
+}
+
+#command-input {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 14px;
+  width: 100%;
+  outline: none;
+}
+
+/* javascript styling */
+
+/* about section */
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.profile-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+}
+
+.profile-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.section {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 10px;
+}
+
+.section-title {
+    font-weight: bold;
+    color: #00ff00; /* Greenish color to match CLI theme */
+    font-size: 1.1rem;
+}
+
+.section-content {
+    margin-left: 15px;
+    line-height: 1.5;
+}
+
+
+/* form styling in contact.js */
+#email, #message {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  /* width: 100%; */
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+/* Placeholder styling */
+#email::placeholder,
+#message::placeholder {
+  color: white;
+  opacity: 0.7; /* Slight transparency */
+  text-align: center;
+}
+
+/* Input focus effect */
+#email:focus,
+#message:focus {
+  border-bottom: 2px solid #007bff; /* Blue highlight when focused */
+}
+
+
+/* button styling in conatct js */
+#button {
+  background-color: #007bff; /* Bootstrap blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Hover effect */
+#button:hover {
+  background-color: #0056b3; /* Darker blue */
+}
+
+/* Click effect */
+#button:active {
+  background-color: #004494;
+  transform: scale(0.98); /* Slight press effect */
+}
+
+/* Disabled button */
+#button:disabled {
+  background-color: #b3d7ff; /* Lighter blue */
+  cursor: not-allowed;
+}
+
+/* link stying in contact.js */
+.link{
+  color:#007bff;
+}

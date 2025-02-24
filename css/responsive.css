@@ -1,0 +1,26 @@
+@media screen and (max-width: 768px) {
+    body {
+      padding: 5px;
+    }
+    #terminal {
+      width: 95vw; /* Uses more screen space on small devices */
+      min-height: 75vh;
+    }
+    #terminal-body {
+      padding: 10px;
+      overflow-y:auto ;
+    }
+    #terminal-title {
+      font-size: 16px;
+    }
+    #command-input {
+      font-size: 12px;
+    }
+    #email, #message {
+      font-size: 14px;
+    }
+    #button {
+      padding: 10px 18px;
+      font-size: 14px;
+    }
+  }
