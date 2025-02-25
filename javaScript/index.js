@@ -53,12 +53,14 @@ function handleCommand(command) {
       typeof commands[command] === "function"
         ? commands[command]()
         : `<p>${commands[command]}</p>`;
+
+    if(command === "contact"){
+      // 🚀 Attach event listener after rendering the contact form
+      setTimeout(() => attachContactFormListener(), 50);
+    }
   } else {
     response += `<p>Command not found. Type 'help' for a list of commands.</p>`;
   }
-
-  // 🚀 Attach event listener after rendering the contact form
-  setTimeout(() => attachContactFormListener(), 50);
 
   outputDiv.innerHTML += response;
   inputField.value = "";
@@ -88,10 +90,16 @@ function attachContactFormListener() {
       const clonedForm = latestForm.cloneNode(true);
       latestForm.replaceWith(clonedForm);
 
+
+      // Select elements
+        const submitButton = clonedForm.querySelector("button[type='submit']");
+        const responseText = document.getElementById("feedback-response");
+
       clonedForm.addEventListener("submit", async (e) => {
         e.preventDefault();
-        console.log("New form event listener is working...");
-
+      // Changin ui while submiting
+        submitButton.disabled = true;
+        responseText.textContent = "Submitting...";
         try {
           const data = new FormData(e.target);
 
@@ -100,7 +108,6 @@ function attachContactFormListener() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(Object.fromEntries(data)), // Convert FormData to JSON
           });
-          const responseText = document.getElementById("feedback-response")
           if(response.ok){
             clonedForm.reset();
             responseText.textContent = "✅ Thank you for your feedback!"; 
@@ -110,6 +117,8 @@ function attachContactFormListener() {
         } catch (error) {
           responseText.textContent = "❌ ❌ Error submitting form.";
           console.error("Error:", error);
+        }finally{
+          submitButton.disabled = false;
         }
       });
     } else {
